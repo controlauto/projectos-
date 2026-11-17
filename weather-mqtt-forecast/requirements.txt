@@ -1,0 +1,8 @@
+pandas
+joblib
+scikit-learn
+# the ingest script uses the paho-mqtt 1.x Client() API
+paho-mqtt<2
+streamlit
+matplotlib
+seaborn
