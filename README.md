@@ -55,6 +55,14 @@ a deaerator tank, UPS and parking-lot lighting. About 1,900 BACnet points.
 ## 7. Infrastructure
 - Proxmox VE homelab: Home Assistant VM, LXC services, Frigate NVR, Tailscale remote access.
 
+## 8. Weather forecasting dashboard (MQTT + ML) — [`weather-mqtt-forecast/`](weather-mqtt-forecast/)
+- Subscribes to a Home Assistant weather topic over MQTT and logs temperature, dew point, humidity,
+  wind, pressure and UV index (~25k samples).
+- Two scikit-learn **Random Forest** models predict temperature **+1 h and +3 h** ahead from current
+  conditions plus time features. Training notebooks compare them against a decision tree.
+- **Streamlit** dashboard: real vs. predicted temperature, related variables, date-range filter and data table.
+- Connection settings are read from environment variables; no credentials in the repository.
+
 ---
 
 ### Engineering principles
